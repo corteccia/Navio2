@@ -1,7 +1,7 @@
-CXX ?= g++
+CXX ?= g
+CFLAGS = -std=c++11
 TOPDIR = $(CURDIR)/../../Navio
 INCLUDES = -I $(TOPDIR)
-CFLAGS = -std=c++11
 
 all:
 	$(MAKE) -C $(TOPDIR) all
