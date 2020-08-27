@@ -1,10 +1,10 @@
 CXX ?= g++
-NAVIO = ../../Navio
-INCLUDES = -I ../../Navio
+TOPDIR = $(CURDIR)/../../Navio
+INCLUDES = -I $(TOPDIR)
 
 all:
-	$(MAKE) -C ../../Navio all
-	$(CXX) $(INCLUDES) threaded_baro.cpp -L$(NAVIO) -lnavio -lpthread -o threaded_baro
+	$(MAKE) -C $(TOPDIR) all
+	$(CXX) $(INCLUDES) threaded_baro.cpp -L$(TOPDIR) -lnavio -lpthread -o threaded_baro
 
 clean:
 	rm threaded_baro

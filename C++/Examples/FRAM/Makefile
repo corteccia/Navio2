@@ -1,10 +1,10 @@
 CXX ?= g++
-NAVIO = ../../Navio
-INCLUDES = -I ../../Navio
+TOPDIR = $(CURDIR)/../../Navio
+INCLUDES = -I $(TOPDIR)
 
 all:
-	$(MAKE) -C ../../Navio all
-	$(CXX) $(INCLUDES) FRAM.cpp -L$(NAVIO) -lnavio -o FRAM
+	$(MAKE) -C $(TOPDIR) all
+	$(CXX) $(INCLUDES) FRAM.cpp -L$(TOPDIR) -lnavio -o FRAM
 
 clean:
 	rm -f FRAM

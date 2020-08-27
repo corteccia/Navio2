@@ -1,10 +1,10 @@
 CXX ?= g++
-NAVIO = ../../Navio
-INCLUDES = -I ../../Navio
+TOPDIR = $(CURDIR)/../../Navio
+INCLUDES = -I $(TOPDIR)
 
 all:
-	$(MAKE) -C ../../Navio all
-	$(CXX) -std=c++11 $(INCLUDES) -L$(NAVIO) AccelGyroMag.cpp -lnavio -o AccelGyroMag
+	$(MAKE) -C $(TOPDIR) all
+	$(CXX) -std=c++11 $(INCLUDES) -L$(TOPDIR) AccelGyroMag.cpp -lnavio -o AccelGyroMag
 
 clean:
 	rm -f AccelGyroMag

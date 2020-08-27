@@ -1,12 +1,12 @@
 CXX ?= g++
-PIGPIO_PATH ?= pigpio
+PIGPIO_PATH ?= $(CURDIR)/pigpio
 CFLAGS = -std=c++11 -Wno-psabi -c -I . -I$(PIGPIO_PATH)
 
 SRC=$(wildcard */*.cpp)
-OBJECTS = $(SRC:.cpp=.o) 
+OBJECTS = $(SRC:.cpp=.o)
 
 %.o: %.cpp
-	$(CXX) $(CFLAGS) -o $@ $< 
+	$(CXX) $(CFLAGS) -o $@ $<
 
 .PHONY: get_deps clean
 

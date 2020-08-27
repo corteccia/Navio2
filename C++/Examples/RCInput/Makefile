@@ -1,16 +1,15 @@
 CXX ?= g++
-NAVIO = ../../Navio
+TOPDIR = $(CURDIR)/../../Navio
 
-PIGPIO_PATH ?= $(NAVIO)/pigpio
+PIGPIO_PATH ?= $(TOPDIR)/pigpio
 
 LIB = -L$(PIGPIO_PATH)
 
-INCLUDES = -I ../../Navio -I$(PIGPIO_PATH)
+INCLUDES = -I $(TOPDIR) -I$(PIGPIO_PATH)
 
 all:
-	$(MAKE) -C ../../Navio all
-	$(CXX) -std=gnu++11 $(INCLUDES) $(LIB) RCInput.cpp -L$(NAVIO) -lnavio -o RCInput -lrt -lpthread -lpigpio
+	$(MAKE) -C $(TOPDIR) all
+	$(CXX) -std=gnu++11 $(INCLUDES) $(LIB) RCInput.cpp -L$(TOPDIR) -lnavio -o RCInput -lrt -lpthread -lpigpio
 
 clean:
 	rm -f RCInput
-

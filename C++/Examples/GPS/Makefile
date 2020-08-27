@@ -1,11 +1,11 @@
 CXX ?=g++
 CFLAGS=-c -Wall
-NAVIO = ../../Navio
-INCLUDES = -I ../../Navio
+TOPDIR = $(CURDIR)/../../Navio
+INCLUDES = -I $(TOPDIR)
 
 all:
-	$(MAKE) -C ../../Navio all
-	$(CXX) -std=c++11 $(INCLUDES) gps.cpp -L$(NAVIO) -lnavio -o gps
+	$(MAKE) -C $(TOPDIR) all
+	$(CXX) -std=c++11 $(INCLUDES) gps.cpp -L$(TOPDIR) -lnavio -o
 	rm -rf *.o
 
 clean:

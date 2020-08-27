@@ -1,11 +1,11 @@
 CXX ?= g++
-NAVIO = ../../Navio
-INCLUDES = -I ../../Navio
+TOPDIR = $(CURDIR)/../../Navio
+INCLUDES = -I $(TOPDIR)
 CFLAGS = -std=c++11
 
 all:
-	$(MAKE) -C ../../Navio all
-	$(CXX) $(CFLAGS) $(INCLUDES) -L$(NAVIO) LED.cpp -lnavio -o LED
+	$(MAKE) -C $(TOPDIR) all
+	$(CXX) $(CFLAGS) $(INCLUDES) -L$(TOPDIR) LED.cpp -lnavio -o LED
 
 clean:
 	rm -f LED

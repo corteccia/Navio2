@@ -1,10 +1,10 @@
 CXX ?= g++
-NAVIO = ../../Navio
-INCLUDES = -I ../../Navio
+TOPDIR = $(CURDIR)/../../Navio
+INCLUDES = -I $(TOPDIR)
 
 all:
-	$(MAKE) -C ../../Navio all
-	$(CXX) -std=gnu++11 $(INCLUDES) Servo.cpp -L$(NAVIO) -lnavio -o Servo
+	$(MAKE) -C $(TOPDIR) all
+	$(CXX) -std=gnu++11 $(INCLUDES) Servo.cpp -L$(TOPDIR) -lnavio -o Servo
 
 clean:
 	rm -f Servo
